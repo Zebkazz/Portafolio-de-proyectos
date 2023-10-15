@@ -23,6 +23,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+::-webkit-scrollbar{
+    background-color: #094d4d;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 10px;
+    border: 3px solid #094d4d;
+}
 
 body {
     background-image: url("../img/back.jpg");
@@ -31,15 +39,14 @@ body {
 	height: 100vh;
     width: 100vw;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 #contpinf{
 	background: linear-gradient(-45deg, #6e070771, #000000cb, #063d145e, #000000d7, #434b0663, #000000d7, #06104b63, #000000d7);
 	background-size: 1000% 1000%;
 	animation: gradient 100s infinite;
-    height: 100vh;
-    width: 100vw;
+    height: auto;
     position: relative;
 }
 
@@ -67,7 +74,7 @@ header{
 }
 
 .textgrand{
-    font-size: 2.5rem;
+    font-size: 2.6vw;
     padding-left: 20px;
     font-family: BelanosimaB;
     background: linear-gradient(to right,#02ffc0 20%,#00fafa 30%,#9600fa 50%,#00f3f3 70%, #faf600 20%,#00ffbf  80%);
@@ -81,7 +88,7 @@ header{
 }
 .textgrand:hover{
     font-family: BelanosimaEB;
-    font-size: 2.6rem;
+    font-size: 2.7vw;
     transition: all 500ms;
     background: linear-gradient(to right,#ffffff 20%,#ffffff  80% );
     -webkit-background-clip: text;
@@ -110,16 +117,37 @@ header{
         flex-direction: column;
         align-items: center;
     }
-    .zebkazz_foto{
+    #zebkazz_foto{
         margin-top: 30px;
         width: 15vw;
         height: 15vw;
         border-radius: 50%;
+        transition: all 500ms;
+        border: 0px groove ;
+        
+    }
+    #zebkazz_foto:hover{
+        border: 5px groove #fff;
+        cursor: pointer;
+        transition: all 500ms;
+        box-shadow: 2px 1px 20px #ffffff;
     }
     .zebkazz_nom{
-        margin-top: 10px;
+        margin-top: 20px;
+        width: 100%;
         display: flex;
         justify-content: center;
+        flex-direction: column;
+    }
+    #nomzeb{
+        text-align: center;
+    }
+    #nomzebh2{
+        padding-top: 20px;
+        font-family: BelanosimaEB;
+        text-align: center;
+        font-size: 1.5vw;
+        color: #fff;
     }
     
 .contp{
@@ -139,76 +167,16 @@ header{
     border-radius: 10px;
 }
 .shadow-pop-bl{
-    animation:shadow-pop-bl1 .3s cubic-bezier(.47,0.000,.745,.715) reverse both
+    animation:shadow-pop-bl1 .4s cubic-bezier(.47,0.000,.745,.715) reverse both
 }
 
-@-webkit-keyframes shadow-pop-bl1 {
-    0% {
-      -webkit-box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
-              box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
-      -webkit-transform: translateX(0) translateY(0);
-              transform: translateX(0) translateY(0);
-    }
-    100% {
-      -webkit-box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
-              box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
-      -webkit-transform: translateX(8px) translateY(-8px);
-              transform: translateX(8px) translateY(-8px);
-    }
-  }
-  @keyframes shadow-pop-bl1 {
-    0% {
-      -webkit-box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
-              box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
-      -webkit-transform: translateX(0) translateY(0);
-              transform: translateX(0) translateY(0);
-    }
-    100% {
-      -webkit-box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
-              box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
-      -webkit-transform: translateX(8px) translateY(-8px);
-              transform: translateX(8px) translateY(-8px);
-    }
-  }
 
 .shadow-pop-bl:hover {
-    -webkit-animation: shadow-pop-bl 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-    animation: shadow-pop-bl 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    -webkit-animation: shadow-pop-bl 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    animation: shadow-pop-bl 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
     border: solid 2px #fff;
     transition: all 500ms;
 }
-
-@-webkit-keyframes shadow-pop-bl {
-    0% {
-      -webkit-box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
-              box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
-      -webkit-transform: translateX(0) translateY(0);
-              transform: translateX(0) translateY(0);
-    }
-    100% {
-      -webkit-box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
-              box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
-      -webkit-transform: translateX(8px) translateY(-8px);
-              transform: translateX(8px) translateY(-8px);
-    }
-  }
-  @keyframes shadow-pop-bl {
-    0% {
-      -webkit-box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
-              box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
-      -webkit-transform: translateX(0) translateY(0);
-              transform: translateX(0) translateY(0);
-    }
-    100% {
-      -webkit-box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
-              box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
-      -webkit-transform: translateX(8px) translateY(-8px);
-              transform: translateX(8px) translateY(-8px);
-    }
-  }
-
-
-
 
 .menu{
     position: absolute;
@@ -281,14 +249,13 @@ background-color:var(--targ-color4);
     position: absolute;
     z-index: 100;
     top: 25vh;
-    left: 0px;
     width: 0px;
-    left: -50px;
+    left: 50px;
 }
 
 .menute{
     width: 100%;
-    font-size: 2rem;
+    font-size: 2vw;
     padding-left: 20px;
     font-family: BelanosimaB;
     background: linear-gradient(to right,#02ffc0 20%,#00fafa 30%,#9600fa 50%,#00f3f3 70%, #faf600 20%,#00ffbf  80%);
@@ -315,7 +282,7 @@ background-color:var(--targ-color4);
 .icon{
     position: relative;
     color: #fff;
-    font-size: 1.7rem;
+    font-size: 1.7vw;
     padding: 10px;
     z-index: 1000;
     transition: all 500ms;
@@ -353,6 +320,65 @@ background-color:var(--targ-color4);
 
 
 
+/* --------------------------------------------ANIMACIONES------------------------------------ */
+
+@-webkit-keyframes shadow-pop-bl1 {
+    0% {
+      -webkit-box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+              box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+      -webkit-transform: translateX(0) translateY(0);
+              transform: translateX(0) translateY(0);
+    }
+    100% {
+      -webkit-box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
+              box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
+      -webkit-transform: translateX(8px) translateY(-8px);
+              transform: translateX(8px) translateY(-8px);
+    }
+  }
+  @keyframes shadow-pop-bl1 {
+    0% {
+      -webkit-box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+              box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+      -webkit-transform: translateX(0) translateY(0);
+              transform: translateX(0) translateY(0);
+    }
+    100% {
+      -webkit-box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
+              box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
+      -webkit-transform: translateX(8px) translateY(-8px);
+              transform: translateX(8px) translateY(-8px);
+    }
+  }
+
+  @-webkit-keyframes shadow-pop-bl {
+    0% {
+      -webkit-box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+              box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+      -webkit-transform: translateX(0) translateY(0);
+              transform: translateX(0) translateY(0);
+    }
+    100% {
+      -webkit-box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
+              box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
+      -webkit-transform: translateX(8px) translateY(-8px);
+              transform: translateX(8px) translateY(-8px);
+    }
+  }
+  @keyframes shadow-pop-bl {
+    0% {
+      -webkit-box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+              box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+      -webkit-transform: translateX(0) translateY(0);
+              transform: translateX(0) translateY(0);
+    }
+    100% {
+      -webkit-box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
+              box-shadow: -1px 1px #fff, -2px 2px #fff, -3px 3px #fff, -4px 4px #fff, -5px 5px #fff, -6px 6px #fff, -7px 7px #fff, -8px 8px #fff;
+      -webkit-transform: translateX(8px) translateY(-8px);
+              transform: translateX(8px) translateY(-8px);
+    }
+  }
 
 
 
@@ -375,3 +401,15 @@ background-color:var(--targ-color4);
 		background-position: 0% 50%;
 	}
 }
+
+@media (max-width: 1200px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .conts{
+        width: 100vw;
+        margin-right: 20px;
+    }
+
+  }

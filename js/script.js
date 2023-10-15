@@ -1,7 +1,19 @@
+$(function() {
+  var $body = $(document);
+  $body.bind('scroll', function() {
+    // "Disable" the horizontal scroll.
+    if ($body.scrollLeft() !== 0) {
+      $body.scrollLeft(0);
+    }
+  });
+});
+
+
+
 // mesaje de bienvenida
-function mensaje(){
-  alert("Por favor presiona f11 para una mayor inmersion");
-}
+  function mensaje(){
+    alert("Por favor presiona f11 para una mayor inmersion");
+  }
 
 document.querySelector(".contmenu").style.transition = "all 1500ms";
 document.querySelector(".contmenu").style.left= "0px";
